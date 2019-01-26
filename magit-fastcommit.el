@@ -9,6 +9,7 @@
 ;; action to Magit's commit popup.
 
 (require 'magit)
+(require 'uuidgen)
 
 ;;; Code:
 
