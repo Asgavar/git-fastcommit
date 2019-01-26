@@ -1,4 +1,4 @@
-;;; magit-fastcommit.el --- Generate commit messages with Magit and two keystrokes
+;;; magit-fastcommit.el --- Generate commit messages with Magit and two keystrokes -*- lexical-binding: t -*-
 
 ;; Author: Artur Juraszek
 ;; URL: https://github.com/Asgavar/magit-fastcommit
