@@ -1,6 +1,10 @@
 ;;; magit-fastcommit.el --- Generate commit messages with Magit and two keystrokes
 
+;; Author: Artur Juraszek
+;; URL: https://github.com/Asgavar/magit-fastcommit
+;;
 ;;; Commentary:
+;;
 ;; A small package adding a "commit with an auto-generated message"
 ;; action to Magit's commit popup.
 
