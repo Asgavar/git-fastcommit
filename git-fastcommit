@@ -1,4 +1,14 @@
 #! /usr/bin/sh
 
-git add -A
-git commit -m $(uuidgen)
+style=$(git config fastcommit.style) || style=uuid
+
+case $style in
+    uuid)
+        git add -A
+        git commit -m $(uuidgen)
+        ;;
+    *)
+        echo wrong fastcommit.style value in your .gitconfig, bye!
+        exit 1
+        ;;
+esac
