@@ -12,3 +12,5 @@ case $style in
         exit 1
         ;;
 esac
+
+# vim:ft=sh
