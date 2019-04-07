@@ -2,10 +2,23 @@
 
 style=$(git config fastcommit.style) || style=uuid
 
+function stage_and_commit {
+    git add -A
+    git commit -m $1
+}
+
 case $style in
     uuid)
-        git add -A
-        git commit -m $(uuidgen)
+        stage_and_commit $(uuidgen)
+        ;;
+    sequential)
+        lastnumber=$(git log -1 --pretty=%s)
+        if [[ $lastnumber =~ '^[0-9]+$' ]]; then
+            echo last commit message was not a number, bye!
+            exit 1
+        fi
+        nextnumber=$((1 + lastnumber))
+        stage_and_commit $nextnumber
         ;;
     *)
         echo wrong fastcommit.style value in your .gitconfig, bye!
